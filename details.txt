@@ -1,0 +1,38 @@
+
+CRUD operation on comment
+
+comment table contains
+
+name
+id
+commenter_id
+comment
+CRUD operations can be performed on comment only .
+
+=================================================
+
+- only authorized user can comment
+- anyone can view comment session as well as whole website
+
+sql:
+
+use comment;
+create TABLE Comments(
+    id int NOT NULL AUTO_INCREMENT,
+    name varchar(100),
+    commenter_id int(25),
+    comment varchar(400),
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY(id) 
+);
+
+use comment;
+
+CREATE TABLE users(
+    id int NOT NULL AUTO_INCREMENT,
+    username varchar(255),
+    email varchar(255),
+    password varchar(255),
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY(id)
+);
