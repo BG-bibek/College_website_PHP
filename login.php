@@ -58,10 +58,12 @@
                 $data = $result->fetch_assoc();
                 $_SESSION['isloggedin'] = true;
                 $_SESSION['username'] = $data['username'];
-                $_SESSION['id']= $data['id'];
+                $_SESSION['commenter_id']= $data['id'];
                 //redirection
                 header('location:index.php');
                 // echo var_dump($_SESSION);
+            }else{
+                echo "please enter valid user and password";
             }
 
 

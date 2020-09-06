@@ -23,28 +23,23 @@
 
     if (!empty($_GET['id'])) {
         $id =  $_GET['id'];
-        $sql = "SELECT name,text,id FROM Comments WHERE id = $id";
+        $sql = "SELECT comment FROM Comments WHERE id = $id";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
 
             while ($row = $result->fetch_assoc()) {
-                $name = $row["name"];
-                $text = $row["text"];
-                $id = $row["id"];
+
+                $comment = $row["comment"];
             }
         }
     ?>
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>?id=<?php echo $id; ?>" method='POST'>
             <table>
-                <tr>
-                    <th>Name</th>
-                    <td><input type="text" name="name" value="<?php echo $name; ?>"></td>
-                </tr>
 
                 <tr>
                     <th>comment</th>
-                    <td><input type="text" name="text" value="<?php echo $text; ?>"></td>
+                    <td><input type="text" name="text" value="<?php echo $comment; ?>"></td>
                 </tr>
                 <tr>
                     <td><input type="submit"></td>
@@ -69,14 +64,15 @@
     }
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-        $name = $_POST['name'];
-        $text = $_POST['text'];
+
+        $comment = $_POST['text'];
         $id = $_GET['id'];
-        $sql = "UPDATE Comments SET name= '$name' , text = '$text' WHERE id = $id";
+        $sql = "UPDATE Comments SET comment = '$comment' WHERE id = $id";
 
         if ($conn->query($sql) === TRUE) {
             //redirection
             header('location:index.php');
+            echo "its here ";
         } else {
             echo "Error updating record: " . $conn->error;
         }

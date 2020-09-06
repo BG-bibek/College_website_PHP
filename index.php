@@ -118,7 +118,7 @@ include('layout/header.php');
 
 <!-- ==================================================================================== -->
 
-<a href="comment.php"class="btn btn-primary" > Comment</a>
+<a href="comment.php" class="btn btn-primary"> Comment</a>
 
 <!-- ===================================================================================================================================================================== -->
 <?php
@@ -153,22 +153,31 @@ $sql = "SELECT * FROM Comments";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    echo "<div class = 'container'>";
+    echo "<div  id = 'comment_box' class = 'container'>";
     while ($row = $result->fetch_assoc()) {
 
-        echo '<h5>' . $row["name"] . '</h5>';
-        echo '<span>' . $row["created_at"] . '</span>';
-        echo '<br>';
-        echo '<td>' . $row['text'] . '</td>';
+        echo "<div >";
 
+        echo '<h3>' . $row["name"] . '</h3>';
+        echo '<em>-' . $row["created_at"] . '</em>';
+        echo '<br>';
+        echo '<td>' . $row['comment'] . '</td>';
         echo "<div class='float-right'>";
-        if ($_SESSION['id'] == $row['id']) {
-            echo '<td>' . "<a class='btn btn-sm btn-warning' href ='update.php?id=$row[id]'>EDIT</a>" . '</td>';
-            // echo '<br>';
-            echo '<td>' . "<a  class='btn btn-sm btn-danger' href ='delete.php?id=$row[id]'>Delete</a>" . '</td>';
+        if (isset($_SESSION['commenter_id'])) {
+            if ($_SESSION['commenter_id'] == $row['commenter_id']) {
+                echo '<td>' . "<a class='btn btn-sm btn-warning' href ='update.php?id=$row[id]'>EDIT</a>" . '</td>';
+                // echo '<br>';
+                echo '<td>' . "<a  class='btn btn-sm btn-danger' href ='delete.php?id=$row[id]'>Delete</a>" . '</td>';
+            }
         }
+
+
+
+        echo '</div>';
+        echo '<hr>';
         echo '</div>';
     }
+    echo '<br>';
     echo "</div>";
 } else {
     echo "No Comments";

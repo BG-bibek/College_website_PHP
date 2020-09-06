@@ -77,6 +77,7 @@
             if($conn->query($sql)===true)
             {
                 echo "registration is successful";
+                header('location:login.php');
 
             }
 
