@@ -19,7 +19,7 @@ session_start();
 
 <body>
     <header>
-        <a href="#" class="site-logo" aria-label="homepage">sunway</a>
+        <a href="#" class=" site-logo" aria-label="homepage">sunway</a>
         <nav class="main-nav">
             <ul class="nav__list">
                 <li class="nav__list-item"><a href="#" class="nav__link">Home</a></li>

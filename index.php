@@ -3,7 +3,7 @@ include('layout/header.php');
 ?>
 <section class="home-intro">
     <h2>Sunway International Business School</h2>
-    <h4>Blog</h4>
+    <h3>Blog</h3>
 </section>
 <div class="container">
     <div class="row mb-2 post ">
@@ -11,7 +11,7 @@ include('layout/header.php');
             <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <div class="col p-4 d-flex flex-column position-static">
                     <strong class="d-inline-block mb-2 text-primary">Similar</strong>
-                    <h3 class="mb-0">Other Student blog </h3>
+                    <h2 class="mb-0">Other Student blog </h2>
                     <div class="mb-1 text-muted">Nov 12</div>
                     <p class="card-text mb-auto">This is a wider card with supporting text below as a natural
                         lead-in to additional content.</p>
@@ -23,7 +23,7 @@ include('layout/header.php');
             <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <div class="col p-4 d-flex flex-column position-static">
                     <strong class="d-inline-block mb-2 text-success">Design</strong>
-                    <h3 class="mb-0">Post title</h3>
+                    <h2 class="mb-0">Post title</h2>
                     <div class="mb-1 text-muted">Nov 11</div>
                     <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to
                         additional content.</p>
@@ -56,7 +56,7 @@ include('layout/header.php');
                 porta ac consectetur ac, vestibulum at eros.</p>
 
         </div>
-        <img src="images/dempo.jpg" class="img slide-in from-right" alt="Responsive image">
+        <img src="images/ganesh.jpg" class="img slide-in from-right" alt="Responsive image">
     </div>
 
 
@@ -102,7 +102,7 @@ include('layout/header.php');
                 commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus,
                 porta ac consectetur ac, vestibulum at eros.</p>
         </div>
-        <img src="images/dashin.jpg" class=" img slide-in from-right">
+        <img src="images/single.jpg" class=" img slide-in from-right">
     </div>
 </main>
 
@@ -157,8 +157,7 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
 
         echo "<div >";
-
-        echo '<h3>' . $row["name"] . '</h3>';
+        echo '<h4>' . $row["name"] . '</h4>';
         echo '<em>-' . $row["created_at"] . '</em>';
         echo '<br>';
         echo '<td>' . $row['comment'] . '</td>';

@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
-
     <?php
-
     $server_name = 'localhost';
     $username = 'root';
     $password = '';
@@ -47,20 +43,6 @@
             </table>
         </form>
     <?php
-
-
-
-
-
-        // $sql = "DELETE FROM Comments where id = $id";
-
-        // if($conn->query($sql)==TRUE){
-        //     echo "Record Deleted Sucessfully";
-        //     echo "<a href='index.php'>GO back </a>";
-        // }else{
-        //     echo "Error";
-        //     echo "<a href='index.php'>GO back </a>";
-        // }
     }
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -79,5 +61,4 @@
     }
     ?>
 </body>
-
 </html>
