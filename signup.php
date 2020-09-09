@@ -4,6 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <style>
+        input {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+        .container {
+            padding: 24px;
+            margin: 40px;
+            margin-left: 250px;
+            border: 1px solid #ccc;
+        }
+    </style>
+
 </head>
 <body>
     <?php
@@ -84,6 +103,7 @@
         }
     }
     ?>
+    <div class="container">
     <h2>Sign Up</h2>
     <p>please fill the form below for registration</p>
     <p style="color: red;font-weight:bold;"><?php echo $password_match_err; ?></p>
@@ -118,10 +138,11 @@
             </td>
         </tr>
         <tr>
-            <td><input type="submit"></td>
+            <td><input class="btn btn-primary  btn-lg btn-block" type="submit"></td>
         </tr>
     </table>
     </form>
     <p>Already registerd ? <a href="login.php">Login</a></p>
+    </div>
 </body>
 </html>

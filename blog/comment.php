@@ -1,12 +1,25 @@
-
-
-
 <?php 
-
 session_start();
 if (!isset($_SESSION['username']) && $_SESSION['isloggedin'] != true) {
-    header('location:login.php');
+    header('location:../login.php');
 }    ?>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        input {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+        .container {
+            padding: 24px;
+            margin: 40px;
+            margin-left: 250px;
+            border: 1px solid #ccc;
+        }
+    </style>
 
 <div id="panel">
     <h3 style="text-align: center;">please fill up the form to comment</h3>
@@ -31,17 +44,14 @@ if (!isset($_SESSION['username']) && $_SESSION['isloggedin'] != true) {
                 <td><input type="text" name="text"></td>
                 </tr>
                 <tr>
-                    <td><input type="submit"></td>
+                    <td><input class="btn btn-primary btn-lg btn-block" type="submit"></td>
                 </tr>
             </table>
         </form>
     </div>
 </div>
 
-
 <?php
-
-
 $server_name = 'localhost';
 $username = 'root';
 $password = '';
@@ -60,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sql = "INSERT INTO Comments(name,commenter_id,comment) VALUES ('$name','$commenter_id','$text')";
     if ($conn->query($sql)) {
         echo "Excuted successfully";
-        header('location:index.php');
+        header('location:../blog.php');
     } else {
         echo "Error inserting into Comment table";
     }

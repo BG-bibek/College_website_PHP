@@ -13,7 +13,7 @@
         $sql = "DELETE FROM Comments where id = $id";
         if ($conn->query($sql) == TRUE) {
             //redirection
-            header('location:index.php');
+            header('location:../blog.php');
         } else {
             echo "Error";
             echo "<a href='index.php'>GO back </a>";
